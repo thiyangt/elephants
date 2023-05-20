@@ -37,9 +37,12 @@ simulate_african_elephant <- function(n, age_category, gender) {
 }
 
 # Function to simulate Asian elephant body measurements
-simulate_asian_elephant <- function(n, age_category) {
+simulate_asian_elephant <- function(n, age_category, gen) {
   height <- generate_random(n, 1.5, 3.0)
-
+  flank_girth <- generate_random(n, 140, 290)
+  heart_girth <- generate_random(n, 190, 380)
+  neck_girth <- generate_random(n, 90, 240)
+  gender <- rep(gen, n)
   if (age_category == "less than 10 years") {
     weight <- 500 + 200 * height + generate_random(n, -200, 200)
   } else if (age_category == "10-20 years") {
@@ -51,10 +54,10 @@ simulate_asian_elephant <- function(n, age_category) {
   data <- data.frame(
     Category = "Asian",
     Age_Category = age_category,
-    Gender = NA,
-    Flank_Girth = NA,
-    Heart_Girth = NA,
-    Neck_Girth = NA,
+    Gender = gender,
+    Flank_Girth = flank_girth,
+    Heart_Girth = heart_girth,
+    Neck_Girth = neck_girth,
     Weight = weight,
     Height = height,
     Fore_Feet_Circumference = height / 2
