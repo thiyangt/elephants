@@ -12,6 +12,8 @@ usethis::use_data(DATASET, overwrite = TRUE)
 # ----
 # https://seaworld.org/animals/all-about/elephants/characteristics/
 
+# https://ielc.libguides.com/sdzg/factsheets/asianelephant/characteristics
+
 # African------------
 # A1M
 # Weight
@@ -19,6 +21,9 @@ set.seed(20052023)
 ##a1
 af_a1m_w_kg <- round(runif(150, min=1000, max=3000), 1)
 af_a1m_h_m <- round(runif(150, min=2.1, max=2.7))
+# forefoot circumference
+af_a1m_ffc_m <- (af_a1m_h_m/2) + rnorm(150)
+
 
 af_a1f_w_kg <- round(runif(200, min=900, max=2700), 1)
 af_a1f_h_m <- round(runif(200, min=2, max=2.5), 1)
