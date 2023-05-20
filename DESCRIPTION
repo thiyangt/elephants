@@ -1,11 +1,11 @@
 Package: elephants
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Body measurements of elephants 
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: person("Thiyanga S.", "Talagala", , "ttalagala@sjp.ac.lk", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-0656-9789"))
+Maintainer: ttalagala@sjp.ac.lk
+Description: A simulated dataset contain body measurements of african and asian elephants
+License: GPL-3
 Encoding: UTF-8
 LazyData: true

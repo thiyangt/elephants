@@ -113,5 +113,6 @@ asian <- rbind(asian, as6)
 colnames(african)
 colnames(asian)
 
-elephants <- cbind(african, asian)
+elephants <- rbind(african, asian)
+elephants <- tibble::tibble(elephants)
 save(elephants, file=here::here("data", "elephants.rds"))
