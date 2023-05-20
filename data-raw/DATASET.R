@@ -115,4 +115,5 @@ colnames(asian)
 
 elephants <- rbind(african, asian)
 elephants <- tibble::tibble(elephants)
-save(elephants, file=here::here("data", "elephants.rds"))
+#save(elephants, file=here::here("data", "elephants.rds"))
+use_data(elephants,overwrite = TRUE)
