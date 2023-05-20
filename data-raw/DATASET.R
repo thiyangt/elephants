@@ -1,6 +1,6 @@
 ## code to prepare `DATASET` dataset goes here
 
-usethis::use_data(DATASET, overwrite = TRUE)
+#usethis::use_data(DATASET, overwrite = TRUE)
 
 # elephants data simulation
 
@@ -71,51 +71,47 @@ african <- rbind(african, df3)
 african <- rbind(african, df4)
 african <- rbind(african, df5)
 african <- rbind(african, df6)
-african$type <- rep("African", 850)
+View(african)
 
 ## Asian
 ##as1
-as1 <-
+as1 <- simulate_asian_elephant(sample_sizes[7],
+                               age[1],
+                               "male")
 
+##as2
+as2 <- simulate_asian_elephant(sample_sizes[8],
+                               age[1],
+                               "female")
 
-as_a1m_w_kg <- round(runif(150, min=500, max=1000), 1)
-as_a1m_h_m <- round(runif(150, min=1.4, max=1.8), 1)
-# forefoot circumference
-as_a1m_ffc_m <- (as_a1m_h_m/2) + rnorm(150)
+##as3
+as3 <- simulate_asian_elephant(sample_sizes[9],
+                               age[2],
+                               "male")
 
+##as4
+as4 <- simulate_asian_elephant(sample_sizes[10],
+                               age[2],
+                               "female")
 
-as_a1f_w_kg <- round(runif(210, min=400, max=900), 1)
-as_a1f_h_m <- round(runif(210, min=1.3, max=1.6), 1)
-# forefoot circumference
-as_a1f_ffc_m <- (as_a1f_h_m/2) + rnorm(210)
+##as5
+as5 <- simulate_asian_elephant(sample_sizes[11],
+                               age[3],
+                               "male")
 
+##as6
+as6 <- simulate_asian_elephant(sample_sizes[12],
+                               age[3],
+                               "female")
 
+asian <- rbind(as1, as2)
+asian <- rbind(asian, as3)
+asian <- rbind(asian, as4)
+asian <- rbind(asian, as5)
+asian <- rbind(asian, as6)
 
-##a2
-as_a2m_w_kg <- round(runif(130, min=1500, max=3500), 1)
-as_a2m_h_m <- round(runif(130, min=2, max=2.4), 1)
-# forefoot circumference
-as_a2m_ffc_m <- (as_a2m_h_m/2) + rnorm(130)
+colnames(african)
+colnames(asian)
 
-
-as_a2f_w_kg <- round(runif(150, min=1200, max=2500), 1)
-as_a2f_h_m <- round(runif(150, min=1.8, max=2.2), 1)
-# forefoot circumference
-as_a2f_ffc_m <- (as_a2f_h_m/2) + rnorm(150)
-
-
-
-##a3
-as_a3m_w_kg <- round(runif(90, min=3500, max=5500), 1)
-as_a3m_h_m <- round(runif(90, min=2.4, max=2.7), 1)
-# forefoot circumference
-as_a3m_ffc_m <- (as_a3m_h_m/2) + rnorm(90)
-
-
-
-as_a3f_w_kg <- round(runif(120, min=2500, max=3500), 1)
-as_a3f_h_m <- round(rnorm(120, mean=2, sd=5), 1)
-# forefoot circumference
-as_a3f_ffc_m <- (as_a3f_h_m/2) + rnorm(120)
-
-
+elephants <- cbind(african, asian)
+save(elephants, file=here::here("data", "elephants.rds"))
