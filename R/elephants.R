@@ -11,7 +11,7 @@
 #'\item{Neck_Girth}{neck girth in meters}
 #'\item{Weight}{body weight in meters}
 #'\item{Height}{shoulder height in meters}
-#'\item{Fore_Feet_Circumference}{fore feet circumference in meters}
+#'\item{Fore_Feet_Circumference}{Mean of fore feet circumference in meters}
 #'}
 #'@source simulated dataset generated according to the findings of past studies
 #'@example
